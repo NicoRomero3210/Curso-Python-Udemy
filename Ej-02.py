@@ -1,3 +1,4 @@
+"""
 #Clase 22 Condicional If, elif y else
 
 a = 8
@@ -120,7 +121,7 @@ def insertarColor(lista,color):
 insertarColor(colores,color)
 
 print(colores)
-
+*/
 #CLase 027 Funciones Lambda
 
 resultado = lambda numero: numero + 30
@@ -131,10 +132,24 @@ resultado2 = lambda n1,n2,n3: n1 + n2 + n3
 
 print(resultado2(1,2,3))
 
+
+
+
 #Clase 028 Modulos
 
+#Aca voy a importar el modulo de ejemplo que esta en la carpeta Modulos, se llama EjemploModulo
 
+from Modulos import EjemploModulo1 as ejemplito
 
+ejemplito.imprimirNombre('Carlos')
+
+"""
+
+#Clase 29 PIP Gestor de Modulos y Paquetes
+#Como instale camelcase con la terminal usando pip entonces me deja usar el import de ese modulo
+import camelcase
+
+#Clase 30 Leer Ficheros
 
 
 
