@@ -143,7 +143,7 @@ from Modulos import EjemploModulo1 as ejemplito
 
 ejemplito.imprimirNombre('Carlos')
 
-"""
+
 
 #Clase 29 PIP Gestor de Modulos y Paquetes
 #Como instale camelcase con la terminal usando pip entonces me deja usar el import de ese modulo
@@ -151,5 +151,43 @@ import camelcase
 
 #Clase 30 Leer Ficheros
 
+fichero  = open('FicheroLectura.txt','rt')
+
+datosFicheros = fichero.read()
+
+print(datosFicheros)
+
+#Clase 31 Grabar Ficheros
+
+fichero = open('ficheroGrabar.txt','wt')
+
+fichero.write('Que ni la pija, te queda hermano, ni la pija me queda a mi NO NO')
+
+fichero.close()
+
+#Clase 32 Incluir datos en un fichero
+
+fichero = open('ficheroGrabar.txt','at')
+
+fichero.write('\nSoy bizarro, Travesti horrendo, Soy Bizarro y no puedo dejar de gritar!!!')
 
 
+
+#Clase 33 Borrar Fichero de Texto
+
+import os
+
+os.remove('ficheroParaBorrar.txt')
+
+"""
+#Clase 34 Grabar Fichero Binario
+
+import pickle
+
+fichero = open('ficheroBinario.pckl','wb')
+
+listaColores = ['rojo','verde','azul']
+
+pickle.dump(listaColores,fichero)
+
+fichero.close()
