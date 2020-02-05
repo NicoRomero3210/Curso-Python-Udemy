@@ -70,8 +70,136 @@ print(fecha.day)
 print(fecha.hour)
 print(fecha.minute)
 print(fecha.second)
+
+#Clase 40 Bases de Datos, crear una conexion
+
+import sqlite3
+
+conexion = sqlite3.connect("basededatos.db") #Me crea este archivo de extension db y eso se abre en sqlite
+
+conexion.close()
+
+#Clase 41 Crear una tabla en la BD
+
+import sqlite3
+
+conexion = sqlite3.connect("basededatos.db")
+
+cursor = conexion.cursor()
+
+cursor.execute('CREATE TABLE PERSONAS(nombre text, apellido text, edad integer)')
+
+conexion.commit()
+
+conexion.close()
+
+#Clase 42 Insertar una fila en la BD
+
+import sqlite3
+
+conexion = sqlite3.connect("basededatos.db")
+
+cursor = conexion.cursor()
+
+cursor.execute('INSERT INTO PERSONAS VALUES("Ricardo","Iorio","57")')
+
+conexion.commit()
+
+conexion.close()
+
+#Clase 43 Insertar varias Filas a la vezs
+
+import sqlite3
+
+conexion = sqlite3.connect("basededatos.db")
+
+cursor = conexion.cursor()
+
+Personas = [('Pablo','Perez',35),('Juan','Perez',55),('Mariano','Moreno',34),('Pedro','Perez',22),('Marcelo','Polino',44)]
+
+cursor.executemany('INSERT INTO PERSONAS VALUES (?,?,?)',Personas)
+
+conexion.commit()
+
+conexion.close()
+
+#Clase 44 Consultar datos
+
+import sqlite3
+
+conexion = sqlite3.connect("basededatos.db")
+
+cursor = conexion.cursor()
+
+cursor.execute("SELECT * FROM PERSONAS")
+
+personas = cursor.fetchall()
+
+for persona in personas:
+    print(persona)
+
+conexion.close()
+
+#Clase 45 Consultar Datos con clausula Where
+
+import sqlite3
+
+conexion = sqlite3.connect('basededatos.db')
+
+cursor = conexion.cursor()
+
+cursor.execute('SELECT * FROM PERSONAS WHERE edad > 40')
+
+personas = cursor.fetchall()
+
+for persona in personas:
+    print(persona)
+
+conexion.close()
+
+#Clase 46 Ordenar Datos
+
+import sqlite3
+
+conexion = sqlite3.connect('basededatos.db')
+
+cursor = conexion.cursor()
+
+cursor.execute('SELECT * FROM PERSONAS ORDER BY EDAD DESC')
+
+personas = cursor.fetchall()
+
+for persona in personas:
+    print(persona)
+
+conexion.close()
+
+#Clase 47 Borrar Datos
+
+import  sqlite3
+
+conexion = sqlite3.connect('basededatos.db')
+
+cursor = conexion.cursor()
+
+cursor.execute('DELETE FROM PERSONAS WHERE apellido like "%POLINO%"')
+
+conexion.commit()
+
+conexion.close()
+
+#Clase 48 Actualizar Datos en la Base
+
+import sqlite3
+
+conexion = sqlite3.connect('basededatos.db')
+
+cursor = conexion.cursor()
+
+cursor.execute("UPDATE PERSONAS SET edad = 19 WHERE nombre like '%Juan%'")
+
+conexion.commit()
+
+conexion.close()
 """
-#Clase 40 Bases de Datos
-
-
 
